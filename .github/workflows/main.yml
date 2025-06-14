@@ -53,9 +53,10 @@ jobs:
 
   - name: Install Docker Scout
     run: |
-      mkdir -p ~/.docker/cli-plugins
-      curl -sSfL https://github.com/docker/scout-cli/releases/latest/download/docker-scout_linux_amd64 -o ~/.docker/cli-plugins/docker-scout
-      chmod +x ~/.docker/cli-plugins/docker-scout
+     mkdir -p ~/.docker/cli-plugins
+     curl -sSfL https://github.com/docker/scout-cli/releases/download/v0.23.3/docker-scout_linux_amd64 -o ~/.docker/cli-plugins/docker-scout
+     chmod +x ~/.docker/cli-plugins/docker-scout
+
 
   - name: Verify Docker Scout install
     run: docker scout version
