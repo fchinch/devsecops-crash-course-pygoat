@@ -45,6 +45,14 @@ jobs:
   - name: Build Docker Image
     run: docker build -f Dockerfile -t myapp:latest . 
 
+  - name: Show Docker daemon config (if exists)
+    run: |
+      if [ -f /etc/docker/daemon.json ]; then
+        cat /etc/docker/daemon.json
+      else
+        echo "No daemon.json file found. Using default Docker settings."
+      fi
+
   - name: Install Docker Scout
     run: |
       mkdir -p ~/.docker/cli-plugins
