@@ -3,6 +3,8 @@ FROM python:3.11-slim-buster
 WORKDIR /app
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    gcc \
+    build-essential \
     libpq-dev \
     python3-dev \
     dnsutils \
